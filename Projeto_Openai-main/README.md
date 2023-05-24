@@ -2,6 +2,6 @@
 
 #npm install express --save
 
-#npm install openai
-
 #npm install nodemon -g
+
+#Criar .env com a chave OPENAI_API_KEY

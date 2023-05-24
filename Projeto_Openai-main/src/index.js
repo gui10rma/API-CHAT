@@ -11,7 +11,7 @@ const pageExtensao = "hbs"
 app.use('/public', express.static(__dirname + '/public'))
 app.use(express.json())
 
-app.set("views")
+app.set("views", "./src/views")
 
 
 app.engine(pageExtensao, handlebars({defaultLayout: "main"}))
@@ -23,7 +23,7 @@ app.get("/", async (req, res) => {
 
 app.get("/request", async (req, res) => {
     const {genero} = req.query
-    fetchAPI(`Mande séries sobre o gênero: ${genero}`)
+    fetchAPI(`Liste séries sobre o gênero: ${genero}`)
         .then(data => res.render("request.hbs", {data: data.choices[0].message.content}))
    
 })
